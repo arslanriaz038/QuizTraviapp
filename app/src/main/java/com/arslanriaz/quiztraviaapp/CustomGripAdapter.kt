@@ -23,12 +23,13 @@ class CustomGripAdapter(var gridList: List<ItemCategory>, var activity: Activity
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         val view: View = View.inflate(activity, R.layout.item_gridview, null)
 
-        // val tv_num = view.findViewById<TextView>(R.id.) as TextView
+
         val tv_cat = view.findViewById<TextView>(R.id.item_text) as TextView
         val img_cat = view.findViewById<ImageView>(R.id.item_image)
 
 
-        //tv_num.text= (position+1).toString()+"."
+
+
         tv_cat.text = gridList.get(position).title
         val cat_pic = gridList.get(position).image
 
