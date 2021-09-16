@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">QuizTraviaApp</string>
+    <string name="url">api.php?amount=10&amp;type=multiple</string>
+
+    <string-array name="Difficulty">
+        <item>easy</item>
+        <item>medium</item>
+        <item>hard</item>
+    </string-array>
+
+    <string-array name="Type">
+        <item>multiple</item>
+        <item>boolean</item>
+    </string-array>
+</resources>
