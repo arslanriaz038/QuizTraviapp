@@ -37,9 +37,6 @@ class MainActivity : AppCompatActivity(), MyRvAdapter.InnerClickListner {
             Room.databaseBuilder(applicationContext, QuestionsDatabase::class.java, "questionsDB")
                 .build()
 
-
-        //  database.questionDao().deleteAll()
-
         binding.recyclerView.adapter = myAdapter
 
         viewModel.response.observe(this) { result ->
@@ -101,6 +98,7 @@ class MainActivity : AppCompatActivity(), MyRvAdapter.InnerClickListner {
 
             val intent = Intent(this, ResultAfterSubmit()::class.java)
             intent.putExtra("count", correctCount)
+            intent.putExtra("category", category)
             startActivity(intent)
 
         }

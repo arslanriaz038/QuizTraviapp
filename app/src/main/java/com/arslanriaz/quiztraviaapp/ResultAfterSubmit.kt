@@ -27,9 +27,10 @@ class ResultAfterSubmit() : AppCompatActivity() {
 
 
         val count = intent.getSerializableExtra("count")
+        val category = intent.getSerializableExtra("category")
 
         binding.count.text = "Score: $count/10"
-
+        binding.category.text = "Category: $category"
 
         var newlist = ArrayList<Questions>()
 
