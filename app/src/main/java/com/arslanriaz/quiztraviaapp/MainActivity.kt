@@ -53,7 +53,16 @@ class MainActivity : AppCompatActivity(), MyRvAdapter.InnerClickListner {
         viewModel.getApiResponse(category, diff!!, type!!, amount)
 
         binding.submit.setOnClickListener {
-            val correctCount = allQuestions.filter { it.selected_opt == it.correct_answer }.count()
+            var correctCount = allQuestions.filter { it.selected_opt == it.correct_answer }.count()
+
+
+            when (diff) {
+                "easy" -> correctCount=correctCount*1
+                "medium" -> correctCount=correctCount*2
+                "hard" -> correctCount= correctCount*3
+               
+            }
+
 
             val questionsList: ArrayList<String> = ArrayList()
 
@@ -94,11 +103,12 @@ class MainActivity : AppCompatActivity(), MyRvAdapter.InnerClickListner {
                 Log.d("Database", it.toString())
             })
 
-            binding.count.text = "Score: $correctCount/10"
+         //   binding.count.text = "Score: $correctCount/10"
 
             val intent = Intent(this, ResultAfterSubmit()::class.java)
             intent.putExtra("count", correctCount)
             intent.putExtra("category", category)
+            //   intent.putExtra("difficulty", diff)
             startActivity(intent)
 
         }
